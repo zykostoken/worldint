@@ -1,0 +1,280 @@
+<index.html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSYKOSWORLD - Portal del Ecosistema ZYKOS</title>
+<meta name="description" content="Portal central del ecosistema ZYKOS - Mental Health × Token
+× Community">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+background: #000;
+color: #fff;
+line-height: 1.6;
+overflow-x: hidden;
+}
+/* Hero Section */
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+position: relative;
+overflow: hidden;
+}
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 30% 50%, rgba(255, 140, 0, 0.1) 0%, transparent 50%);
+animation: pulse 8s ease-in-out infinite;
+}
+@keyframes pulse {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 0.6; }
+}
+.hero-content {
+text-align: center;
+z-index: 1;
+padding: 2rem;
+max-width: 1200px;
+}
+.logo {
+font-size: clamp(3rem, 10vw, 8rem);
+font-weight: 900;
+letter-spacing: -0.05em;
+margin-bottom: 1rem;
+background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text;
+animation: glow 3s ease-in-out infinite;
+}
+@keyframes glow {
+0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.5)); }
+50% { filter: drop-shadow(0 0 40px rgba(255, 140, 0, 0.8)); }
+}
+.tagline {
+font-size: clamp(1rem, 3vw, 1.5rem);
+color: #999;
+margin-bottom: 3rem;
+text-transform: uppercase;
+letter-spacing: 0.2em;
+}
+.subtitle {
+font-size: clamp(1rem, 2vw, 1.25rem);
+color: #ccc;
+max-width: 800px;
+margin: 0 auto 4rem;
+line-height: 1.8;
+}
+/* Bifurcación */
+.bifurcacion {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+max-width: 1000px;
+margin: 0 auto;
+padding: 2rem;
+}
+.path-card {
+background: rgba(255, 255, 255, 0.02);
+border: 2px solid rgba(255, 140, 0, 0.3);
+padding: 3rem 2rem;
+border-radius: 1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+.path-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(255, 140, 0, 0) 0%, rgba(255, 140, 0, 0.1) 100%);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.path-card:hover {
+transform: translateY(-10px);
+border-color: #FF8C00;
+box-shadow: 0 20px 60px rgba(255, 140, 0, 0.3);
+}
+.path-card:hover::before {
+opacity: 1;
+}
+.path-icon {
+font-size: 4rem;
+margin-bottom: 1rem;
+}
+.path-title {
+font-size: 2rem;
+font-weight: 900;
+margin-bottom: 0.5rem;
+color: #FF8C00;
+}
+.path-subtitle {
+font-size: 0.9rem;
+color: #999;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 1rem;
+}
+.path-description {
+color: #ccc;
+margin-bottom: 2rem;
+line-height: 1.6;
+}
+.path-cta {
+display: inline-block;
+padding: 1rem 2rem;
+background: #FF8C00;
+color: #000;
+text-decoration: none;
+font-weight: 700;
+text-transform: uppercase;
+border-radius: 0.5rem;
+transition: all 0.3s ease;
+position: relative;
+z-index: 1;
+}
+.path-cta:hover {
+background: #FFA500;
+transform: scale(1.05);
+}
+/* Footer */
+.footer {
+text-align: center;
+padding: 3rem 2rem;
+background: #0a0a0a;
+border-top: 1px solid rgba(255, 140, 0, 0.2);
+}
+.footer-text {
+color: #666;
+font-size: 0.9rem;
+}
+.footer-links {
+margin-top: 1rem;
+display: flex;
+justify-content: center;
+gap: 2rem;
+flex-wrap: wrap;
+}
+.footer-links a {
+color: #999;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.footer-links a:hover {
+color: #FF8C00;
+}
+.disclaimer {
+margin-top: 2rem;
+font-size: 0.8rem;
+color: #555;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+/* Status indicator */
+.status {
+position: fixed;
+top: 1rem;
+right: 1rem;
+padding: 0.5rem 1rem;
+background: rgba(16, 185, 129, 0.2);
+border: 1px solid #10b981;
+border-radius: 2rem;
+font-size: 0.8rem;
+color: #10b981;
+z-index: 1000;
+}
+.status::before {
+content: '●';
+margin-right: 0.5rem;
+animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.3; }
+}
+@media (max-width: 768px) {
+.bifurcacion {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Status Indicator -->
+<div class="status">ECOSYSTEM ACTIVO</div>
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<h1 class="logo">PSYKOSWORLD</h1>
+<p class="tagline">Portal del Ecosistema</p>
+<p class="subtitle">
+Un ecosistema donde <strong>profesionales</strong> y <strong>affected people</strong>
+co-construyen salud mental alternativa. Token as tool. Community as governance. </p>
+<!-- Bifurcación de Caminos -->
+<div class="bifurcacion">
+<!-- Camino Pacientes/ZYK -->
+<div class="path-card" onclick="goToPacientes()">
+<div class="path-icon"> </div>
+<h2 class="path-title">ZYKOS</h2>
+<p class="path-subtitle">Pacientes & Comunidad</p>
+<p class="path-description">
+Narrativas punk, lived experience, bounties, tropos culturales. Para affected people, creadores y activistas. </p>
+<a href="https://zykos.ar" class="path-cta">Entrar a ZYKOS →</a>
+</div>
+<!-- Camino Médicos/PSYKOS -->
+<div class="path-card" onclick="goToMedicos()">
+<div class="path-icon"> </div>
+<h2 class="path-title">PSYKOS</h2>
+<p class="path-subtitle">Profesionales & Research</p>
+<p class="path-description">
+Clinical backing, research institucional, partnerships académicos. Para médicos, investigadores y profesionales. </p>
+<a href="https://psykotoken.com" class="path-cta">Entrar a PSYKOS →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<p class="footer-text">
+<strong>PSYKOSWORLD</strong> © 2025 - Co-construcción Cooperativa
+</p>
+<div class="footer-links">
+<a href="https://zykos.ar">ZYKOS (Pacientes)</a>
+<a href="https://psykotoken.com">PSYKOS (Profesionales)</a>
+<a href="#memberful">Membresía</a>
+<a href="#contact">Contacto</a>
+</div>
+<p class="disclaimer">
+ZYKOS es un meme token. No tiene utilidad garantizada. No es consejo financiero. DYOR. Este ecosistema es experimental y construido cooperativamente por la comunidad. </p>
+</footer>
+<script>
+// Router functions
+function goToPacientes() {
+window.location.href = 'https://zykos.ar';
+}
+function goToMedicos() {
+window.location.href = 'https://psykotoken.com';
+}
+// Analytics placeholder (agregar Plausible después)
+console.log('PSYKOSWORLD Portal loaded');
+console.log('Wallet admin:', '0x6aea80e20849bee22fdc54317ea8ec761ece44f7');
+</script>
+</body>
+</html>
